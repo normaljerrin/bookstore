@@ -1,0 +1,45 @@
+{% extends 'basic.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail view</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+body{
+    background: rgb(204, 242, 242);
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+  </style>
+</head>
+{% block content %}
+<body>
+
+    <div class="card mb3" style="max-width:840px;">
+    <center>
+        <div class="col-md-4">
+
+        <h5 class="card-title">{{ object.title }}</h5>
+        <img src="{{ object.image_url }}" class="card-img">
+        <h5 class="card-title">{{ object.description }}</h5>
+
+         {% if object.book_available is True %}
+<a href="" class="btn btn-outline-success" role="button">Available</a>
+
+    <a href="{% url 'checkout-view' object.id %}" class="btn btn-outline-success" role="button">Buy Now</a>
+    {% else %}
+    <li class="text-danger">Out Of Stock</li>
+{% endif %}
+    </div>
+    </div>
+
+</div>
+    </center>
+{% endblock content %}
+</body>
+</html>

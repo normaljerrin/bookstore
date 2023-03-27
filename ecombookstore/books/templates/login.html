@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        .container{
+    padding: 10px;
+    border: 20px solid #9fc5e8;
+    margin: 40px 100px 100px 100px
+}
+
+body{
+    background: rgb(204, 242, 242);
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+    </style>
+</head>
+<body>
+<br><br>
+<div class=" container ">
+<h1 align="center">Login</h1>
+
+<form align="center" method="POST">
+    {% csrf_token%}
+    {{ form.as_p }}
+    <button type="submit" class="btn">Login</button>
+    <p class="">Don't have an account, then click  </p>
+    <button type="submit" class="btn"><a href="{% url 'reggister' %}" class="btn btn-outline-success" role="button">Register</a></button>
+</form>
+</div>
+</body>
+</html>
